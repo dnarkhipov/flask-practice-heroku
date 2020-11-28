@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <main class="container">
+    <section class="mt-3 pb-5">
+      <h1 class="display-3 mt-4">{{ tour.title }}<br>{% for i in range(tour.stars|int) %}  ★{% endfor %}</h1>
+      <!-- HERO -->
+      <p class="lead">{{ tour.country }} {{ departure }} {{ tour.nights }} ночей</p>
+      <img src="{{ tour.picture }}" class="w-75" alt="{{ tour.title }}">
+      <p class="my-4 w-75">{{ tour.description }}</p>
+      <a href="#" class="btn btn-success btn-lg">Купить тур за {{ tour.price }} руб</a>
+    </section>
+  </main>
+{% endblock %}

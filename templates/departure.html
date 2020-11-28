@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ departure }}</h1>
+    {% set tours_values = tours.values() %}
+    <p class="mb-4">Найдено {{ tours_values|length }} тура, от {{ (tours_values|min(attribute='price')).price }} до {{ (tours_values|max(attribute='price')).price }} рублей и от {{ (tours_values|min(attribute='nights')).nights }} до {{ (tours_values|max(attribute='nights')).nights }} ночей</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+        {% for tour_id, tour in tours.items() %}
+            {% include 'tour_card.html' %}
+        {% endfor %}
+    </div>
+  </main>
+{% endblock %}
