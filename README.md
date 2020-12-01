@@ -1,2 +1,2 @@
 # flask-practice-heroku
-flask project for Heroku
+Flask project for Heroku
