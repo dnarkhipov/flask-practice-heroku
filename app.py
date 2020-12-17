@@ -53,9 +53,9 @@ def departures(departure):
     )
 
 
-@app.route('/tours/<id>/')
+@app.route('/tours/<int:id>/')
 def tours(id):
-    tour = data.tours.get(int(id), None)
+    tour = data.tours.get(id, None)
     if tour is None:
         return f'Тур id={id} не найден', 404
 
@@ -96,10 +96,10 @@ def get_tour_by_departure(departure):
     return ' '.join(response)
 
 
-@app.route('/data/tours/<id>/')
+@app.route('/data/tours/<int:id>/')
 def get_tour_by_id(id):
     # return 'тур по id'
-    tour = data.tours.get(int(id), None)
+    tour = data.tours.get(id, None)
     if tour is None:
         return f'Тур id={id} не найден', 404
 
